@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <script src="url.js"></script>
+  <!-- import CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+  <!-- import Vue before Element -->
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <!-- import Vue router -->
+	<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+  <!-- import JS -->
+  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/element-ui/2.4.1/locale/en.js"></script>
+	<link rel="stylesheet" href="app.css">
+</head>
+
+
+<body>
+	<div id="app">
+		<el-container>
+			<el-header height="100px">
+				<img src="../../img/placeholder-logo-2-300x167.png" height="100" align="left">
+			</el-header>
+		<el-container>
+			<el-aside width="200px">
+				<el-col :span="24">
+					<el-menu default-active="1" class="el-menu-vertical-demo">
+						<el-menu-item index="1">
+							<i class="el-icon-location"></i>
+							<router-link to="/location"><span>Location</span></router-link>
+						</el-menu-item>
+						<el-menu-item index="2">
+							<i class="el-icon-document"></i>
+							<router-link to="/login"><span>Login</span></router-link>
+						</el-menu-item>
+						<el-menu-item index="3">
+							<i class="el-icon-setting"></i>
+							<router-link to="/bar"><span>bar</span></router-link>
+						</el-menu-item>
+					</el-menu>
+				</el-col>
+			</el-aside>
+
+			<el-main>
+				<router-view></router-view>
+			</el-main>
+		</el-container>
+	</el-container>
+	</div>
+</body>
+
+<!-- Load components -->
+<script src="./location.js"></script>
+<script src="./login.js"></script>
+
+<!-- Routing and main -->
+<script>
+// Define route components.
+const Location = { template: '<location-table></location-table>' }
+const Login = { template: '<login></login>' }
+const Bar = { template: '<div>bar</div>' }
+
+// Define some routes
+const routes = [
+  { path: '/location', component: Location },
+  { path: '/login', component: Login },
+  { path: '/bar', component: Bar }
+]
+
+// Create the router instance and pass the `routes` option
+const router = new VueRouter({
+  routes // short for `routes: routes`
+})
+
+ELEMENT.locale(ELEMENT.lang.en)
+var vm = new Vue({
+	// Inject the router in the Vue instance
+	router,	
+	el: '#app'
+})
+</script>
+
+
+</html>
