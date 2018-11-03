@@ -28,8 +28,8 @@ Vue.component('location-table', {
         <el-table-column prop="globalRef" label="globalRef" width="160"></el-table-column>
         <el-table-column prop="name" label="name" width="180"></el-table-column>
         <el-table-column prop="address.city" label="city" width="120"></el-table-column>
-        <el-table-column prop="description" label="description" width="480"></el-table-column>
-        <el-table-column prop="presence" label="presence" width="100"></el-table-column>
+        <el-table-column prop="description" label="description"></el-table-column>
+        <el-table-column prop="presence" label="presence"></el-table-column>
       </el-table>
 	`
 })

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+<script src="url.js"></script>
+<!-- import CSS -->
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<!-- import Vue before Element -->
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<!-- import Vue router -->
+<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+<!-- import JS -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/element-ui/2.4.1/locale/en.js"></script>
+<link rel="stylesheet" href="app.css">
+
+<style>
+.box-card {
+	width: 480px;
+}
+
+.login {
+	position: relative;
+	top: 100px;
+/*
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+*/
+	margin: auto;
+}
+</style>
+
+</head>
+
+
+<body>
+
+<div id="app">
+
+<el-card class="box-card login">
+
+  <div slot="header" class="clearfix">
+    <span>Login</span>
+    <el-button style="float: right; padding: 3px 0" type="text">Forget password</el-button>
+  </div>
+
+	<el-form ref="form" :model="form" label-width="80px">
+		</el-form-item>
+			<el-form-item label="Name">
+			<el-input v-model="form.name"></el-input>
+		</el-form-item>
+		</el-form-item>
+			<el-form-item label="Password">
+			<el-input type="password" v-model="form.password"></el-input>
+		</el-form-item>
+		<el-form-item>
+			<el-button style="float: right" type="primary" @click="onSubmit">Login</el-button>
+		</el-form-item>
+	</el-form>
+
+</el-card>
+
+
+</div>
+
+
+</body>
+
+
+<script>
+
+ELEMENT.locale(ELEMENT.lang.en)
+var vm = new Vue({
+	el: '#app',
+	data: function() {
+		return{
+			form: {
+				name: '',
+				password: ''
+			}
+		}
+	},
+	methods: {
+		onSubmit() {
+			console.log(this.form);
+		}
+	}
+});
+
+</script>
+
+</html>

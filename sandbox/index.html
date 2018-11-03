@@ -13,9 +13,6 @@
   <!-- import JS -->
   <script src="https://unpkg.com/element-ui/lib/index.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/element-ui/2.4.1/locale/en.js"></script>
-	<!-- fontawsome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-	<!-- app.css -->
 	<link rel="stylesheet" href="app.css">
 </head>
 
@@ -24,47 +21,29 @@
 	<div id="app">
 		<el-container>
 			<el-header height="100px">
-				<img src="img/placeholder-logo-2-300x167.png" height="100" align="left">
+				<img src="../../img/placeholder-logo-2-300x167.png" height="100" align="left">
 			</el-header>
 		<el-container>
-			<el-aside width="70px">
+			<el-aside width="200px">
 				<el-col :span="24">
 					<el-menu default-active="1" class="el-menu-vertical-demo">
 						<el-menu-item index="1">
-							<router-link to="/login"><i class="fas fa-sign-in-alt fa-2x"></i></router-link>
+							<i class="el-icon-location"></i>
+							<router-link to="/location"><span>Location</span></router-link>
 						</el-menu-item>
 						<el-menu-item index="2">
-							<router-link to="/location"><i class="fas fa-building fa-2x"></i></router-link>
+							<i class="el-icon-document"></i>
+							<router-link to="/login"><span>Login</span></router-link>
 						</el-menu-item>
 						<el-menu-item index="3">
-							<router-link to="/bar"><i class="fas fa-bars fa-2x"></i></router-link>
-						</el-menu-item>
-						<el-menu-item index="4">
-							<router-link to="/bar"><i class="fas fa-bars fa-2x"></i></router-link>
-						</el-menu-item>
-						<el-menu-item index="5">
-							<router-link to="/bar"><i class="fas fa-bars fa-2x"></i></router-link>
-						</el-menu-item>
-						<el-menu-item index="6">
-							<router-link to="/bar"><i class="fas fa-bars fa-2x"></i></router-link>
-						</el-menu-item>
-						<el-menu-item index="7">
-							<router-link to="/bar"><i class="fas fa-bars fa-2x"></i></router-link>
-						</el-menu-item>
-						<el-menu-item index="8">
-							<router-link to="/bar"><i class="fas fa-bars fa-2x"></i></router-link>
-						</el-menu-item>
-						<el-menu-item index="9">
-							<router-link to="/bar"><i class="fas fa-bars fa-2x"></i></router-link>
-						</el-menu-item>
-						<el-menu-item index="10">
-							<router-link to="/bar"><i class="fas fa-bars fa-2x"></i></router-link>
+							<i class="el-icon-setting"></i>
+							<router-link to="/bar"><span>bar</span></router-link>
 						</el-menu-item>
 					</el-menu>
 				</el-col>
 			</el-aside>
 
-      <el-main>
+			<el-main>
 				<router-view></router-view>
 			</el-main>
 		</el-container>

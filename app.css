@@ -1,31 +1,49 @@
 body {
 	font-family: sans-serif;
+  font-family: "Font Awesome 5 Free";
 }
 
+/* login */
+.box-card {
+  width: 480px;
+}
+
+.login {
+  position: relative;
+  top: 100px;
+  /*
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  */
+  margin: auto;
+}
+
+/*
 .el-table {
 	line-height: 0;
 	text-align: left;
 }
 
 .el-header, .el-footer {
-/*  background-color: #B3C0D1; */
+  background-color: #B3C0D1;
   color: #333;
   text-align: center;
   line-height: 60px;
 }
   
 .el-aside {
-/*  background-color: #D3DCE6; */
+  background-color: #D3DCE6;
   color: #333;
   text-align: center;
   line-height: 200px;
 }
 
 .el-main {
-/*  background-color: #E9EEF3; */
+  background-color: #E9EEF3;
   color: #333;
-  text-align: center;
-  line-height: 160px;
+  text-align: center; 
+  line-height: 160px; 
 }
   
 body > .el-container {
@@ -40,3 +58,4 @@ body > .el-container {
 .el-container:nth-child(7) .el-aside {
   line-height: 320px;
 }
+*/
