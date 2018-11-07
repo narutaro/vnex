@@ -31,7 +31,6 @@ fetch(login_url, opt).then(function(response) {
 		}
 	},
 	template: `
-<div id="app">
 <el-card class="box-card login">
   <div slot="header" class="clearfix">
     <span>Login</span>
@@ -51,6 +50,5 @@ fetch(login_url, opt).then(function(response) {
     </el-form-item>
   </el-form>
 </el-card>
-</div>
 	`
 })

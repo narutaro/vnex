@@ -15,76 +15,46 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/element-ui/2.4.1/locale/en.js"></script>
 	<!-- fontawsome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <!-- fonts -->
+  <!-- <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet"> -->
 	<!-- app.css -->
 	<link rel="stylesheet" href="app.css">
 </head>
 
 
 <body>
-	<div id="app">
-		<el-container>
-			<el-header height="100px">
-				<img src="img/placeholder-logo-2-300x167.png" height="100" align="left">
-			</el-header>
-		<el-container>
-			<el-aside width="70px">
-				<el-col :span="24">
-					<el-menu default-active="1" class="el-menu-vertical-demo">
-						<el-menu-item index="1">
-							<router-link to="/login"><i class="fas fa-sign-in-alt fa-2x"></i></router-link>
-						</el-menu-item>
-						<el-menu-item index="2">
-							<router-link to="/location"><i class="fas fa-building fa-2x"></i></router-link>
-						</el-menu-item>
-						<el-menu-item index="3">
-							<router-link to="/bar"><i class="fas fa-bars fa-2x"></i></router-link>
-						</el-menu-item>
-						<el-menu-item index="4">
-							<router-link to="/bar"><i class="fas fa-bars fa-2x"></i></router-link>
-						</el-menu-item>
-						<el-menu-item index="5">
-							<router-link to="/bar"><i class="fas fa-bars fa-2x"></i></router-link>
-						</el-menu-item>
-						<el-menu-item index="6">
-							<router-link to="/bar"><i class="fas fa-bars fa-2x"></i></router-link>
-						</el-menu-item>
-						<el-menu-item index="7">
-							<router-link to="/bar"><i class="fas fa-bars fa-2x"></i></router-link>
-						</el-menu-item>
-						<el-menu-item index="8">
-							<router-link to="/bar"><i class="fas fa-bars fa-2x"></i></router-link>
-						</el-menu-item>
-						<el-menu-item index="9">
-							<router-link to="/bar"><i class="fas fa-bars fa-2x"></i></router-link>
-						</el-menu-item>
-						<el-menu-item index="10">
-							<router-link to="/bar"><i class="fas fa-bars fa-2x"></i></router-link>
-						</el-menu-item>
-					</el-menu>
-				</el-col>
-			</el-aside>
-
-      <el-main>
-				<router-view></router-view>
-			</el-main>
-		</el-container>
-	</el-container>
+  <div id="app">
+    <router-view></router-view>
 	</div>
 </body>
 
 <!-- Load components -->
 <script src="./location.js"></script>
 <script src="./login.js"></script>
+<script src="./two-pane.js"></script>
 
 <!-- Routing and main -->
 <script>
 // Define route components.
+const TwoPane = { template: '<two-pane></two-pane>' }
 const Location = { template: '<location-table></location-table>' }
 const Login = { template: '<login></login>' }
 const Bar = { template: '<div>bar</div>' }
 
 // Define some routes
 const routes = [
+  { path: '/', component: TwoPane,
+    children: [
+      {
+        path: 'location',
+        component: Location
+      },
+      {
+        path: 'bar',
+        component: Bar
+      }
+    ]
+  },
   { path: '/location', component: Location },
   { path: '/login', component: Login },
   { path: '/bar', component: Bar }
