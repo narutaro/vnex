@@ -11,6 +11,16 @@ Vue.component('login', {
   	onSubmit() {
 			console.log(this.form);
 
+//this.$router.push({ name: 'login', query: { redirect: '/bar' } });
+//this.$router.push({ name: 'bar', query: { redirect: '/bar' } });
+
+// 文字列パス
+router.push('bar')
+
+// オブジェクト
+// router.push({ path: 'home' })
+
+/*
 function createURLSearchParams(data) {
   const params = new URLSearchParams();
   Object.keys(data).forEach(key => params.append(key, data[key]));
@@ -28,7 +38,12 @@ fetch(login_url, opt).then(function(response) {
   console.log('cookie-header:' + response.headers.get('Set-Cookie')); 
 });
 
+//this.$router.push("/search?"+this.foobar);
+//this.$router.push("/bar");
+
+*/
 		}
+
 	},
 	template: `
 <el-card class="box-card login">

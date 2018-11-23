@@ -36,38 +36,40 @@ fetch(login_url, opt).then(function(response) {
         <img src="img/logo.png" height="60" align="left">
       </el-header>
     <el-container>
-      <el-aside>
-        <el-col :span="6">
-          <el-menu default-active="1" class="el-menu-vertical-demo">
+      <el-aside width="80px">
+        <el-col>
+          <el-menu default-active="1" class="el-menu-vertical">
             <el-menu-item index="1">
-              <router-link to="/login"><i class="fas fa-sign-in-alt fa-2x"></i></router-link>
+				      <el-tooltip class="item" effect="dark" content="Data centers" placement="right">
+                <router-link to="/location"><i class="fas fa-map-marker-alt fa-2x"></i></router-link>
+				      </el-tooltip>
             </el-menu-item>
             <el-menu-item index="2">
-              <router-link to="/location"><i class="fas fa-building fa-2x"></i></router-link>
+              <router-link to="/access-request"><i class="fas fa-door-open fa-2x"></i></router-link>
             </el-menu-item>
             <el-menu-item index="3">
-              <router-link to="/bar"><i class="fas fa-bars fa-2x"></i></router-link>
+              <router-link to="/facility-request"><i class="fas fa-truck-loading fa-2x"></i></router-link>
             </el-menu-item>
             <el-menu-item index="4">
-              <router-link to="/bar"><i class="fas fa-bars fa-2x"></i></router-link>
+              <router-link to="/delivery-request"><i class="fas fa-truck fa-2x"></i></router-link>
             </el-menu-item>
             <el-menu-item index="5">
-              <router-link to="/bar"><i class="fas fa-bars fa-2x"></i></router-link>
+              <router-link to="/cabs"><i class="fas fa-server fa-2x"></i></router-link>
             </el-menu-item>
             <el-menu-item index="6">
-              <router-link to="/bar"><i class="fas fa-bars fa-2x"></i></router-link>
+              <router-link to="/monitoring"><i class="fas fa-chart-area fa-2x"></i></router-link>
             </el-menu-item>
             <el-menu-item index="7">
-              <router-link to="/bar"><i class="fas fa-bars fa-2x"></i></router-link>
+              <router-link to="/access-card"><i class="fas fa-address-card fa-2x"></i></router-link>
             </el-menu-item>
             <el-menu-item index="8">
-              <router-link to="/bar"><i class="fas fa-bars fa-2x"></i></router-link>
+              <router-link to="/key-manamgent"><i class="fas fa-key fa-2x"></i></router-link>
             </el-menu-item>
             <el-menu-item index="9">
-              <router-link to="/bar"><i class="fas fa-bars fa-2x"></i></router-link>
+              <router-link to="/remote-hands"><i class="fas fa-hand-point-up fa-2x"></i></router-link>
             </el-menu-item>
             <el-menu-item index="10">
-              <router-link to="/bar"><i class="fas fa-bars fa-2x"></i></router-link>
+              <router-link to="/customer-ticket"><i class="fas fa-headset fa-2x"></i></router-link>
             </el-menu-item>
           </el-menu>
         </el-col>
@@ -78,5 +80,7 @@ fetch(login_url, opt).then(function(response) {
       </el-main>
     </el-container>
   </el-container>
+
+
 	`
 })

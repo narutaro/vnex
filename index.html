@@ -22,10 +22,10 @@
 </head>
 
 
-<body>
+<body class="frame">
   <div id="app">
     <router-view></router-view>
-	</div>
+  </div>
 </body>
 
 <!-- Load components -->
@@ -62,6 +62,7 @@ const routes = [
 
 // Create the router instance and pass the `routes` option
 const router = new VueRouter({
+  //mode: 'history',
   routes // short for `routes: routes`
 })
 

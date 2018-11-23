@@ -18,22 +18,23 @@ body {
   margin: auto;
 }
 
-
-.el-header {
-	margin-bottom: 20px;
-  height: 70px;
-}
-
-.el-aside {
-  margin-left: 30px;
-  width: 70px;
-}
-
-/* centering fontawsome
-i {
+/* centering fontawsome */
+.el-menu-vertical {
   text-align: center;
 }
-*/
+
+
+.el-header {
+	margin-bottom: 32px;
+  /* height: 70px; */
+}
+
+.frame {
+  margin-top: 32px;
+  margin-right: 32px;
+  margin-bottom: 32px;
+  margin-left: 32px; 
+}
 
 /*
 .el-table {
