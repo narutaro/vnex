@@ -71,6 +71,9 @@ fetch(login_url, opt).then(function(response) {
             <el-menu-item index="10">
               <router-link to="/customer-ticket"><i class="fas fa-headset fa-2x"></i></router-link>
             </el-menu-item>
+            <el-menu-item index="11">
+              <router-link to="/product-order"><i class="fas fa-shopping-cart fa-2x"></i></router-link>
+            </el-menu-item>
           </el-menu>
         </el-col>
       </el-aside>

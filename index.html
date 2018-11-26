@@ -29,16 +29,26 @@
 </body>
 
 <!-- Load components -->
-<script src="./location.js"></script>
 <script src="./login.js"></script>
 <script src="./two-pane.js"></script>
+<script src="./location.js"></script>
+<script src="./access-request.js"></script>
+<script src="./facility-request.js"></script>
+<script src="./delivery-request.js"></script>
+<script src="./cabs.js"></script>
+<script src="./monitoring.js"></script>
+<script src="./access-card.js"></script>
 
 <!-- Routing and main -->
 <script>
 // Define route components.
+const Login = { template: '<login></login>' }
 const TwoPane = { template: '<two-pane></two-pane>' }
 const Location = { template: '<location-table></location-table>' }
-const Login = { template: '<login></login>' }
+const AccessRequest = { template: '<access-request></access-request>' }
+const FacilityRequest = { template: '<facility-request></facility-request>' }
+const DeliveryRequest = { template: '<delivery-request></delivery-request>' }
+const Cabs = { template: '<cabs></cabs>' }
 const Bar = { template: '<div>bar</div>' }
 
 // Define some routes
@@ -48,6 +58,22 @@ const routes = [
       {
         path: 'location',
         component: Location
+      },
+      {
+        path: 'access-request',
+        component: AccessRequest
+      },
+      {
+        path: 'facility-request',
+        component: FacilityRequest
+      },
+      {
+        path: 'delivery-request',
+        component: DeliveryRequest
+      },
+      {
+        path: 'cabs',
+        component: Cabs
       },
       {
         path: 'bar',
