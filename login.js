@@ -11,41 +11,31 @@ Vue.component('login', {
   	onSubmit() {
 			console.log(this.form);
 
-//this.$router.push({ name: 'login', query: { redirect: '/bar' } });
-//this.$router.push({ name: 'bar', query: { redirect: '/bar' } });
+      function createURLSearchParams(data) {
+        const params = new URLSearchParams();
+        Object.keys(data).forEach(key => params.append(key, data[key]));
+        return params;
+      }
 
-// 文字列パス
-router.push('bar')
+      const login_url = base_url + "glass/login-handler";
+      const data = { "username": this.form.name, "password": this.form.password, "destination": "" };
+      const params = createURLSearchParams(data);
+      const opt = { mode: 'cors', method: 'post', credentials: 'include', body: params };
 
-// オブジェクト
-// router.push({ path: 'home' })
+      fetch(login_url, opt).then(function(response) {
+        //console.log(response); 
+        console.log('date:' + response.headers.get('Date')); 
+        console.log('server:' + response.headers.get('Server')); 
+        console.log('cookie-header:' + response.headers.get('Set-Cookie')); 
+        //console.log('cookie-header-list:' + response.headers.getlist('Set-Cookie')); 
+        //console.log('document.cookie:' + document.cookie); 
+      });
 
-/*
-function createURLSearchParams(data) {
-  const params = new URLSearchParams();
-  Object.keys(data).forEach(key => params.append(key, data[key]));
-  return params;
-}
-
-const login_url = base_url + "glass/login-handler";
-const data = { "username": this.form.name, "password": this.form.password, "destination": "" };
-const params = createURLSearchParams(data);
-const opt = { mode: 'cors', method: 'post', credentials: 'include', body: params };
-
-fetch(login_url, opt).then(function(response) {
-  //console.log(response); 
-  console.log('header:' + response.headers.get('Server')); 
-  console.log('cookie-header:' + response.headers.get('Set-Cookie')); 
-});
-
-//this.$router.push("/search?"+this.foobar);
-//this.$router.push("/bar");
-
-*/
+      router.push('bar')
 		}
-
 	},
 	template: `
+
 <el-card class="box-card login">
   <div slot="header" class="clearfix">
     <span>Login</span>
@@ -65,5 +55,6 @@ fetch(login_url, opt).then(function(response) {
     </el-form-item>
   </el-form>
 </el-card>
+
 	`
 })
